@@ -130,12 +130,15 @@ public class MainActivity extends AppCompatActivity {
                 }
                 Types.Point point = mapView.converToWorldCoordinate(x, y);
 
-                startX = locationX;
-                startY = locationY;
-                startId = 2476431;
-                toId = 2476431;
+                startX = 1.3536178402952649E7;
+                startY = 1.3536178402952649E7;
+                startId = mapView.getMap().getFloorId();
+                toId = mapView.getMap().getFloorId();
+                Log.e(TAG,toId+"");
                 toX = point.x;
+                Log.e(TAG,toX+"");
                 toY = point.y;
+                Log.e(TAG,toY+"");
                 if (ishasEndPoint) {
                     for (int i=0;i < markList.size();i++) {
                         mapView.removeOverlay(markList.get(i));
@@ -144,7 +147,7 @@ public class MainActivity extends AppCompatActivity {
                 ishasEndPoint = true;
                 mark.setMark(R.mipmap.icon_end2x);
                 // TODO 请求导航线路
-                navigateManager.navigation(1.3536188756058615E7, 3659756.0396997267, 2476431, 1.35362266963E7, 3659748.954999998, 2476431,2476431);
+                navigateManager.navigation(startX, startY, startId, toX, toY, startId,toId);
                 mark.setFloorId(toId);
                 mark.init(new double[]{point.x, point.y});
                 //将这个覆盖物添加到MapView中
