@@ -131,7 +131,7 @@ public class MainActivity extends AppCompatActivity {
                 Types.Point point = mapView.converToWorldCoordinate(x, y);
 
                 startX = 1.3536178402952649E7;
-                startY = 1.3536178402952649E7;
+                startY = 3659754.0851698704;
                 startId = mapView.getMap().getFloorId();
                 toId = mapView.getMap().getFloorId();
                 Log.e(TAG,toId+"");
